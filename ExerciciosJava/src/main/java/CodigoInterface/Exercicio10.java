@@ -26,38 +26,45 @@ public class Exercicio10 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lbl_title = new javax.swing.JLabel();
+        lbl_dolar = new javax.swing.JLabel();
+        txt_dolar = new javax.swing.JTextField();
+        lbl_br = new javax.swing.JLabel();
+        btn_calcular = new javax.swing.JButton();
+        lbl_converted = new javax.swing.JLabel();
+        lbl_wallet = new javax.swing.JLabel();
+        txt_convertido = new javax.swing.JTextField();
+        txt_wallet = new javax.swing.JTextField();
+        lbl_dolar2 = new javax.swing.JLabel();
+        lbl_br2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Exercicio 10: Conversor de Dolar");
+        lbl_title.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lbl_title.setText("Exercicio 10: Conversor de Dolar");
 
-        jLabel2.setText("Dolar Atual:");
+        lbl_dolar.setText("Dolar Atual:");
 
-        jTextField1.setText("5.01");
+        txt_dolar.setText("5.00");
 
-        jLabel3.setText("BRL");
+        lbl_br.setText("BRL");
 
-        jButton1.setText("Calcular");
+        btn_calcular.setText("Calcular");
+        btn_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_calcularActionPerformed(evt);
+            }
+        });
 
-        jLabel4.setText("Valor Convertido:");
+        lbl_converted.setText("Valor Convertido:");
 
-        jLabel5.setText("Carteira:");
+        lbl_wallet.setText("Carteira:");
 
-        jLabel6.setText("$");
+        txt_convertido.setEditable(false);
 
-        jLabel7.setText("BRL");
+        lbl_dolar2.setText("$");
+
+        lbl_br2.setText("BRL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,64 +73,87 @@ public class Exercicio10 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jLabel1))
+                        .addGap(51, 51, 51)
+                        .addComponent(lbl_title))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(234, 234, 234)
+                        .addGap(203, 203, 203)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(btn_calcular))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
-                                .addComponent(jLabel2)
+                                .addComponent(lbl_dolar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_dolar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel3))
+                                .addComponent(lbl_br))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
+                                    .addComponent(lbl_converted)
+                                    .addComponent(lbl_wallet))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txt_convertido)
+                                    .addComponent(txt_wallet, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))))))
-                .addContainerGap(99, Short.MAX_VALUE))
+                                    .addComponent(lbl_dolar2)
+                                    .addComponent(lbl_br2))))))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(jLabel1)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46)
+                .addComponent(lbl_title)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_dolar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_dolar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_br)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField3)
-                        .addComponent(jLabel7))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_wallet)
+                        .addComponent(lbl_br2))
+                    .addComponent(lbl_wallet, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2)
-                        .addComponent(jLabel6))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_convertido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_dolar2))
+                    .addComponent(lbl_converted, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(229, 229, 229))
+                .addComponent(btn_calcular)
+                .addGap(81, 81, 81))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
+        // TODO add your handling code here: BOTAO CALCULAR
+        double cotaAtual,wallet,valorConvertido;
+        int vcint;
+        
+        //Pegando valor de cota atual (inserido em uma caixa de texto), convertendo de string para double e armazenando na variavel abaixo
+        cotaAtual=Double.parseDouble(txt_dolar.getText());
+        
+        //Pegando valor inserido na carteira (digitado em uma caixa de texto), convertendo de string para double e armazendno na variavel abaixo
+        wallet=Double.parseDouble(txt_wallet.getText());
+        
+        //Convertendo o valor de REAIS para DOLAR, dividindo as duas variaveis acima
+        valorConvertido=(wallet/cotaAtual);
+        
+        //Convertendo a variavel anterior para integer
+        vcint=(int) valorConvertido;
+        
+        //Convertendo a variavel anterior para string e imprimindo o resultado em uma caixa de texto
+        txt_convertido.setText(Integer.toString(vcint)+",00");
+        
+    }//GEN-LAST:event_btn_calcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,16 +191,16 @@ public class Exercicio10 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton btn_calcular;
+    private javax.swing.JLabel lbl_br;
+    private javax.swing.JLabel lbl_br2;
+    private javax.swing.JLabel lbl_converted;
+    private javax.swing.JLabel lbl_dolar;
+    private javax.swing.JLabel lbl_dolar2;
+    private javax.swing.JLabel lbl_title;
+    private javax.swing.JLabel lbl_wallet;
+    private javax.swing.JTextField txt_convertido;
+    private javax.swing.JTextField txt_dolar;
+    private javax.swing.JTextField txt_wallet;
     // End of variables declaration//GEN-END:variables
 }
