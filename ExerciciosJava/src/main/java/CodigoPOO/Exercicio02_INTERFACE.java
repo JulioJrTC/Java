@@ -97,8 +97,8 @@ public class Exercicio02_INTERFACE extends javax.swing.JFrame {
         //Iremos chamar o metodo criado dentro do objeto
         obj.imprimirTexto();
         
-        //Inserindo na caixa texto a variavel dentro do metodo referenciado no objeto
-        txt_texto.setText(obj.texto); 
+        //Inserindo na caixa texto a variavel dentro do metodo referenciado no objeto encapsulado
+        txt_texto.setText(obj.getTexto()); 
         
     }//GEN-LAST:event_btn_imprimirActionPerformed
 
