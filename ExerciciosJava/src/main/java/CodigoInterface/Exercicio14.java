@@ -14,13 +14,7 @@ public class Exercicio14 extends javax.swing.JFrame {
      * Creates new form Exercicio14
      */
     public Exercicio14() {
-        initComponents();        
-        if(rbtn_celcius.isSelected()==true){
-            lbl_isSelected.setText("ºC");
-        }
-        if(rbtn_fahrenheit.isSelected()==true){
-            lbl_isSelected.setText("ºF");
-        }
+        initComponents();  
     }
 
     /**
@@ -32,17 +26,18 @@ public class Exercicio14 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lbl_titulo = new javax.swing.JLabel();
         lbl_temp = new javax.swing.JLabel();
         lbl_resultado = new javax.swing.JLabel();
         txt_temp = new javax.swing.JTextField();
         btn_converter = new javax.swing.JButton();
         txt_resultado = new javax.swing.JTextField();
-        rbtn_celcius = new javax.swing.JRadioButton();
-        rbtn_fahrenheit = new javax.swing.JRadioButton();
         btn_limpar = new javax.swing.JButton();
         lbl_selected = new javax.swing.JLabel();
         lbl_isSelected = new javax.swing.JLabel();
+        rbtn_celcius = new javax.swing.JRadioButton();
+        rbtn_fahrenheit = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Conversor de Temperaturas");
@@ -63,11 +58,6 @@ public class Exercicio14 extends javax.swing.JFrame {
 
         txt_resultado.setEditable(false);
 
-        rbtn_celcius.setSelected(true);
-        rbtn_celcius.setText("Celcius");
-
-        rbtn_fahrenheit.setText("Fahrenheit");
-
         btn_limpar.setText("Limpar");
         btn_limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +66,25 @@ public class Exercicio14 extends javax.swing.JFrame {
         });
 
         lbl_selected.setText("Converter para:");
+
+        lbl_isSelected.setText("ºF");
+
+        buttonGroup1.add(rbtn_celcius);
+        rbtn_celcius.setSelected(true);
+        rbtn_celcius.setText("Celcius");
+        rbtn_celcius.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_celciusActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbtn_fahrenheit);
+        rbtn_fahrenheit.setText("Fahrenheit");
+        rbtn_fahrenheit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtn_fahrenheitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,8 +118,8 @@ public class Exercicio14 extends javax.swing.JFrame {
                                         .addComponent(rbtn_celcius)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbtn_fahrenheit)
-                                    .addComponent(btn_limpar))))))
+                                    .addComponent(btn_limpar)
+                                    .addComponent(rbtn_fahrenheit))))))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,18 +134,18 @@ public class Exercicio14 extends javax.swing.JFrame {
                     .addComponent(lbl_isSelected))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtn_fahrenheit)
+                    .addComponent(lbl_selected)
                     .addComponent(rbtn_celcius)
-                    .addComponent(lbl_selected))
+                    .addComponent(rbtn_fahrenheit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_converter)
-                    .addComponent(btn_limpar))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_limpar)
+                    .addComponent(btn_converter))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_resultado)
                     .addComponent(txt_resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,41 +154,50 @@ public class Exercicio14 extends javax.swing.JFrame {
     private void btn_converterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_converterActionPerformed
         // TODO add your handling code here: BOTAO CONVERTER
         
+        //Variaveis int para a temperatura e conversões
         int temp,convC,convF;
         
+        //Convetendo caixa de texto string para int e armazenando o valor em uma variavel
         temp=Integer.parseInt(txt_temp.getText());
         
+        //Calculos para a conversão de temperaturas
         convF=(temp*9/5)+32;
-        convC=(temp*5/9)-32;
+        convC=(temp-32)*5/9;
         
-        //Se o botão de Fahrenheit estiver acionado, iremos converter o valor de Celcius para Fahrenheit e o exibir na caixa de texto 
+        //Se o botão de Fahrenheit estiver selecionado, iremos converter o valor de Celcius para Fahrenheit e o exibir na caixa de texto 
         if(rbtn_fahrenheit.isSelected()==true){
-            txt_resultado.setText(String.valueOf(convF));
-            //lbl_isSelected.setText("ºF");
+            txt_resultado.setText(String.valueOf(convF));            
         }
-        //Se o botão de Celcius estiver acionado, iremos converter o valor de Fahrenheit para Celcius e o exibir na caixa de texto
+        //Se o botão de Celcius estiver selecionado, iremos converter o valor de Fahrenheit para Celcius e o exibir na caixa de texto
         if(rbtn_celcius.isSelected()==true){
-            txt_resultado.setText(String.valueOf(convC));
-            //lbl_isSelected.setText("ºC");
+            txt_resultado.setText(String.valueOf(convC));  
         }
-        
-        
-        
-        
     }//GEN-LAST:event_btn_converterActionPerformed
 
     private void btn_limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limparActionPerformed
         // TODO add your handling code here: BOTAO LIMPAR
+        
+        //Se o botao de limpar for acionado, iremos limpar as caixas de texto
         txt_resultado.setText(null);
-        txt_temp.setText(null);
+        txt_temp.setText(null);        
         
-        txt_temp.requestFocus();
-        
-        
-        
-        
-        
+        //Requistando foco a uma caixa de texto
+        txt_temp.requestFocus();        
     }//GEN-LAST:event_btn_limparActionPerformed
+
+    private void rbtn_celciusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_celciusActionPerformed
+        // TODO add your handling code here: Radio Button CELSIUS
+        
+        //Se o radio button Celsius estiver selecionado, iremos trocar o texto de uma label para outro
+        lbl_isSelected.setText("ºF");        
+    }//GEN-LAST:event_rbtn_celciusActionPerformed
+
+    private void rbtn_fahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn_fahrenheitActionPerformed
+        // TODO add your handling code here: Radio Button Fahrenheit
+        
+        //Se o radio button Fahrenheit estiver selecionado, iremos trocar o texto de uma label para outro
+        lbl_isSelected.setText("ºC");        
+    }//GEN-LAST:event_rbtn_fahrenheitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +237,7 @@ public class Exercicio14 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_converter;
     private javax.swing.JButton btn_limpar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel lbl_isSelected;
     private javax.swing.JLabel lbl_resultado;
     private javax.swing.JLabel lbl_selected;
