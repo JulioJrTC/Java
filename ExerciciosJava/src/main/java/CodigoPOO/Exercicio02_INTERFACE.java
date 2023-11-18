@@ -26,81 +26,125 @@ public class Exercicio02_INTERFACE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_titulo = new javax.swing.JLabel();
-        btn_imprimir = new javax.swing.JButton();
-        txt_texto = new javax.swing.JTextField();
-        btn_limpar = new javax.swing.JButton();
+        lblTitulo = new javax.swing.JLabel();
+        btnOk = new javax.swing.JButton();
+        lblNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        btnLimpar = new javax.swing.JButton();
+        txtMensagem = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl_titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lbl_titulo.setText("Exercicio 01: Hello World (POO)");
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblTitulo.setText("Exercicio 02: Mensagem de boas vindas!");
 
-        btn_imprimir.setText("Imprimir");
-        btn_imprimir.addActionListener(new java.awt.event.ActionListener() {
+        btnOk.setText("OK");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_imprimirActionPerformed(evt);
+                btnOkActionPerformed(evt);
             }
         });
 
-        txt_texto.setEditable(false);
-        txt_texto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lblNome.setText("Nome:");
 
-        btn_limpar.setText("Limpar");
+        txtNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        txtMensagem.setEditable(false);
+        txtMensagem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addComponent(lbl_titulo)
-                .addGap(52, 52, 52))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addComponent(lblTitulo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(btn_imprimir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_limpar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(279, 279, 279)
+                        .addComponent(btnOk)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnLimpar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(lbl_titulo)
+                .addGap(62, 62, 62)
+                .addComponent(lblTitulo)
                 .addGap(46, 46, 46)
-                .addComponent(txt_texto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_imprimir)
-                    .addComponent(btn_limpar))
-                .addContainerGap(108, Short.MAX_VALUE))
+                    .addComponent(lblNome)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOk)
+                    .addComponent(btnLimpar))
+                .addGap(28, 28, 28)
+                .addComponent(txtMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
-        // TODO add your handling code here: BOTAO IMPRIMIR
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        // TODO add your handling code here: BOTAO OK
         
-        //Criando uma variavel referenciando uma classe
-        Exercicio01_CLASSE obj;
+        //Criando um novo objeto
+        Exercicio02_CLASSE obj;        
+        obj = new Exercicio02_CLASSE();
         
-        //A variavle acima será um novo objeto da classe
-        obj = new Exercicio01_CLASSE();
+        //Definindo uma variavel string para o nome da pessoa
+        String nomedaPessoa;        
         
-        //Iremos chamar o metodo criado dentro do objeto
-        obj.imprimirTexto();
+        //A variavel acima irá receber um valor digitado em uma caixa de texto
+        nomedaPessoa=txtNome.getText();        
         
-        //Inserindo na caixa texto a variavel dentro do metodo referenciado no objeto encapsulado
-        txt_texto.setText(obj.getTexto()); 
+        //Chamando um Setter referente ao objeto criado, e o mesmo irá receber a variavel acima
+        obj.setNomePessoa(nomedaPessoa);
         
-    }//GEN-LAST:event_btn_imprimirActionPerformed
+        //Chamando o metodo criado em uma classe
+        obj.mensagemPessoal();
+        
+        //Criando uma condição de que se caixa de texto referente ao nome da pessoa estiver vazia, iremos exibir uma mensagem de erro
+        if (nomedaPessoa.isEmpty()){
+            txtMensagem.setText("VAZIA!");
+        }
+        //Caso contrario, iremos exibir uma mensagem de boas vindas a pessoa
+        else{            
+            //Uma caixa de texto irá receber um atributo criando no metodo
+            txtMensagem.setText(obj.frase);
+        }
+        
+    }//GEN-LAST:event_btnOkActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+        
+        //Limpando as caixas de texto
+        txtNome.setText(null);
+        txtMensagem.setText(null);
+        
+        //Requisitando foco
+        txtNome.requestFocus();
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,9 +182,11 @@ public class Exercicio02_INTERFACE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_imprimir;
-    private javax.swing.JButton btn_limpar;
-    private javax.swing.JLabel lbl_titulo;
-    private javax.swing.JTextField txt_texto;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnOk;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtMensagem;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
