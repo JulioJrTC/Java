@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package CodigoPOO;
+package CodigoInterface;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author julio
  */
-public class Exercicio06_INTERFACE extends javax.swing.JFrame {
+public class Exercicio06 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Exercicio06_INTERFACE
+     * Creates new form Exercicio06
      */
-    public Exercicio06_INTERFACE() {
+    public Exercicio06() {
         initComponents();
     }
 
@@ -48,6 +50,8 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
         lblNumero.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblNumero.setText("Insira um numero:");
 
+        txtNumero.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         btnGrupo.add(rbDobro);
         rbDobro.setText("Dobro");
 
@@ -57,20 +61,33 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
         btnGrupo.add(rbraizQuadrada);
         rbraizQuadrada.setText("Raiz Quadrada");
 
-        lblMetodo.setText("Escolha o metodo:");
+        lblMetodo.setText("Escolha o metodo matematico:");
 
         lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblResultado.setText("Resultado:");
+
+        txtResultado.setEditable(false);
+        txtResultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnConfirmar.setBackground(new java.awt.Color(102, 153, 0));
         btnConfirmar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnConfirmar.setForeground(new java.awt.Color(0, 0, 0));
         btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         btnLimpar.setBackground(new java.awt.Color(255, 102, 102));
         btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(0, 0, 0));
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,29 +98,31 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(69, 69, 69))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbDobro)
+                            .addComponent(rbraizQuadrada)
+                            .addComponent(rbTriplo)
+                            .addComponent(lblMetodo)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblResultado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNumero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(btnConfirmar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLimpar))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(245, 245, 245)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(rbDobro)
-                                .addComponent(rbraizQuadrada)
-                                .addComponent(rbTriplo)
-                                .addComponent(lblMetodo)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(167, 167, 167)
-                            .addComponent(lblNumero)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblResultado)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnLimpar)
+                        .addGap(16, 16, 16)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,7 +130,7 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(lblTitulo)
-                .addGap(72, 72, 72)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumero)
                     .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,19 +142,71 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
                 .addComponent(rbTriplo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rbraizQuadrada)
-                .addGap(40, 40, 40)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblResultado)
                     .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar)
                     .addComponent(btnLimpar))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        // TODO add your handling code here: BOTAO CONFIRMAR
+        
+        //Variavel double para o numero inserido na caixa de texto        
+        double numero;
+        
+        //Mecanica de erro, caso não seja inserido nenhum valor na caixa de texto
+        try{
+            numero=Double.parseDouble(txtNumero.getText());
+            
+        }
+        catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Digite um numero!");
+            return;
+        }
+        
+        //Variavel double para o dobro do numero acima
+        double dobro=numero*2;
+        
+        //Variavel double para o triplo do numero acima
+        double triplo=numero*3;
+        
+        //Variavel double para a raiz quadrada do numero acima
+        double raizQuadrada=Math.sqrt(numero);
+
+        //Criando condições para os metodos matematicos selecionados (Radio Buttons)
+        if (rbDobro.isSelected()){
+            txtResultado.setText(String.valueOf(dobro));
+        }
+        else if (rbTriplo.isSelected()){
+            txtResultado.setText(String.valueOf(triplo));
+        }
+        else if (rbraizQuadrada.isSelected()){
+            txtResultado.setText(String.valueOf(raizQuadrada));
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Selecione o metodo matematico!");
+        }
+        
+    }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+        
+        txtNumero.setText(null);
+        txtResultado.setText(null);
+        
+        txtNumero.requestFocus();
+        
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,20 +225,20 @@ public class Exercicio06_INTERFACE extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Exercicio06_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Exercicio06_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Exercicio06_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Exercicio06_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Exercicio06_INTERFACE().setVisible(true);
+                new Exercicio06().setVisible(true);
             }
         });
     }
