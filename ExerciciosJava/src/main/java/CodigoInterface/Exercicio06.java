@@ -200,11 +200,12 @@ public class Exercicio06 extends javax.swing.JFrame {
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // TODO add your handling code here: BOTAO LIMPAR
         
+        //Limpando caixas de texto
         txtNumero.setText(null);
         txtResultado.setText(null);
         
+        //Requisitando foco
         txtNumero.requestFocus();
-        
         
     }//GEN-LAST:event_btnLimparActionPerformed
 
