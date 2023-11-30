@@ -1,22 +1,24 @@
 package CodigoPuro;
 
-public class Exercicio07 {
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Exercicio07 { //Desafio 07: Desenvolva um programa que leia as duas notas de um aluno, calcule e mostre a sua média.    
+    
     public static void main(String[] args){
+        //Novo objeto scanner (input)
+        Scanner inputNumero = new Scanner(System.in);        
         
-        //Variaveis float para os numeros e media
-        double v1, v2, media;
+        //Pedindo numeros ao usuario
+        System.out.print("Digite um numero: ");
+        double num1=inputNumero.nextDouble();
+        System.out.print("Digite outro numero: ");
+        double num2=inputNumero.nextDouble();
         
-        //Variavel float para o primeiro numero
-        v1=4.5;
-        
-        //Variavel float para o segundo numero
-        v2=6.5;
-        
-        //Calculando a media entre as duas variaveis
-        media=(v1+v2)/2;
-        
-        //Imprimindo o resultado
-        System.out.println("A media entre os numeros "+v1+" e "+v2+" é igual a: "+media);
+        //Imprimindo media de numeros
+        double media=(num1+num2)/2;
+        System.out.printf("A media dos numeros %.2f e %.2f é igual a %.2f",num1,num2,media);
         
     }
+    
 }
