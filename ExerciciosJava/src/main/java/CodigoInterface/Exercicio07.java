@@ -4,6 +4,8 @@
  */
 package CodigoInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -26,136 +28,155 @@ public class Exercicio07 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_Titulo = new javax.swing.JLabel();
-        lbl_Num01 = new javax.swing.JLabel();
-        lbl_Num02 = new javax.swing.JLabel();
-        txt_Num01 = new javax.swing.JTextField();
-        txt_Num02 = new javax.swing.JTextField();
-        btn_Calcular = new javax.swing.JButton();
-        btn_Limpar = new javax.swing.JButton();
-        lbl_Media = new javax.swing.JLabel();
-        txt_Media = new javax.swing.JTextField();
+        lblTitulo = new javax.swing.JLabel();
+        lblNum01 = new javax.swing.JLabel();
+        lblNum02 = new javax.swing.JLabel();
+        lblMedia = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
+        txtNum01 = new javax.swing.JTextField();
+        txtNum02 = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Media de Notas");
-        setBackground(new java.awt.Color(255, 255, 255));
 
-        lbl_Titulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lbl_Titulo.setText("Execicio 07: Media de notas");
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTitulo.setText("Exercicio 07: Media de Numeros");
 
-        lbl_Num01.setText("Nota Nº01:");
+        lblNum01.setText("Numero 01:");
 
-        lbl_Num02.setText("Nota Nº02:");
+        lblNum02.setText("Numero 02:");
 
-        btn_Calcular.setText("Calcular");
-        btn_Calcular.addActionListener(new java.awt.event.ActionListener() {
+        lblMedia.setText("Media:");
+
+        lblResultado.setText("0");
+
+        btnCalcular.setBackground(new java.awt.Color(51, 102, 0));
+        btnCalcular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CalcularActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
 
-        btn_Limpar.setText("Limpar");
-        btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpar.setBackground(new java.awt.Color(255, 51, 51));
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_LimparActionPerformed(evt);
+                btnLimparActionPerformed(evt);
             }
         });
-
-        lbl_Media.setText("Media:");
-
-        txt_Media.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(51, 51, 51))
             .addGroup(layout.createSequentialGroup()
+                .addGap(176, 176, 176)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_Num01)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Num01, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_Num02)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Num02, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(lbl_Media)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_Media, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(140, 140, 140)
-                                .addComponent(btn_Calcular)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_Limpar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(217, 217, 217)
-                        .addComponent(lbl_Titulo)))
-                .addContainerGap(203, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addComponent(lblMedia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblResultado))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnCalcular)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnLimpar))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblNum01)
+                                .addComponent(lblNum02))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNum02)
+                                .addComponent(txtNum01, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(lbl_Titulo)
-                .addGap(40, 40, 40)
+                .addGap(50, 50, 50)
+                .addComponent(lblTitulo)
+                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Num01)
-                    .addComponent(txt_Num01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNum01)
+                    .addComponent(txtNum01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Num02)
-                    .addComponent(txt_Num02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(txtNum02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNum02))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_Media)
-                    .addComponent(txt_Media, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(lblMedia)
+                    .addComponent(lblResultado))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Calcular)
-                    .addComponent(btn_Limpar))
-                .addContainerGap(79, Short.MAX_VALUE))
+                    .addComponent(btnCalcular)
+                    .addComponent(btnLimpar))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CalcularActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here: BOTAO CALCULAR
         
-        //Variaveis float
-        double v1,v2,media;
+        //Definindo variaveis double para os numeros
+        double num01;
+        double num02;
         
-        //Pegando valores inseridos nas caixa de texto e os convertendo de string para variaveis e valores float
-        v1=Double.parseDouble(txt_Num01.getText());
-        v2=Double.parseDouble(txt_Num02.getText());
+        //Mecanica de erro para o primeiro numero
+        try{
+            //Anexando numeros de caixas de texto a variaveis (convertidas)
+            num01=Double.parseDouble(txtNum01.getText());
+        }
+        catch(NumberFormatException ERRO1){
+            JOptionPane.showMessageDialog(null, "Digite o primeiro numero!");
+            return;
+        }
         
-        //Calculando a media das notas
-        media=(v1+v2)/2;
+        //Mecanica de erro para o segundo numero
+        try{
+            num02=Double.parseDouble(txtNum02.getText());
+        }
+        catch (NumberFormatException ERRO2){
+            JOptionPane.showMessageDialog(null, "Digite o segundo numero!");
+            return;
+        }
         
-        //Inserido a media de notas na caixa de texto media
-        txt_Media.setText(media+"");
+        //Calculando media
+        double media=(num01+num02)/2;
         
+        //Anexando variavel da media (convertido) a uma label
+        lblResultado.setText(String.valueOf(media));
         
-    }//GEN-LAST:event_btn_CalcularActionPerformed
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
-    private void btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimparActionPerformed
-        // TODO add your handling code here: BOTAO LIMPAR        
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
         
-        //Limpando caixas de texto ao clicar no botao limpar
-        txt_Media.setText(null);
-        txt_Num01.setText(null);
-        txt_Num02.setText(null);
+        //Limpando as caixas de texto
+        txtNum01.setText(null);
+        txtNum02.setText(null);
         
-        //Requisando foco a primeira caixa de texto (nota 1) apos clique em limpar
-        txt_Num01.requestFocus();
+        //"Resetar" a label
+        lblResultado.setText("0");
         
-    }//GEN-LAST:event_btn_LimparActionPerformed
+        //Requisitando foco
+        txtNum01.requestFocus();
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,14 +214,14 @@ public class Exercicio07 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Calcular;
-    private javax.swing.JButton btn_Limpar;
-    private javax.swing.JLabel lbl_Media;
-    private javax.swing.JLabel lbl_Num01;
-    private javax.swing.JLabel lbl_Num02;
-    private javax.swing.JLabel lbl_Titulo;
-    private javax.swing.JTextField txt_Media;
-    private javax.swing.JTextField txt_Num01;
-    private javax.swing.JTextField txt_Num02;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JLabel lblMedia;
+    private javax.swing.JLabel lblNum01;
+    private javax.swing.JLabel lblNum02;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtNum01;
+    private javax.swing.JTextField txtNum02;
     // End of variables declaration//GEN-END:variables
 }
