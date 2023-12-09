@@ -2,10 +2,12 @@ package CodigoPOO;
 
 public class Exercicio09_CLASSE {
     
+    //Atributos para o numero principal, contador do loop e resposta da tabuada
     private int num;
     private int n;
     private int res;
 
+    //Getters e Setters
     public int getNum() {
         return num;
     }
@@ -30,6 +32,7 @@ public class Exercicio09_CLASSE {
         this.res = res;
     }
     
+    //Metodo que irá receber o calculo da tabuada e retornar as respostas
     public int tabuada(){
         res=num*n;
         return res;
