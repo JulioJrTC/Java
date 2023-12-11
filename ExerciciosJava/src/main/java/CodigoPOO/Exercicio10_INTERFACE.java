@@ -2,20 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package CodigoInterface;
-
-import javax.swing.JOptionPane;
+package CodigoPOO;
 
 /**
  *
  * @author julio
  */
-public class Exercicio10 extends javax.swing.JFrame {
+public class Exercicio10_INTERFACE extends javax.swing.JFrame {
 
     /**
-     * Creates new form Exercicio10
+     * Creates new form Exercicio10_INTERFACE
      */
-    public Exercicio10() {
+    public Exercicio10_INTERFACE() {
         initComponents();
     }
 
@@ -28,25 +26,27 @@ public class Exercicio10 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bgMoedas = new javax.swing.ButtonGroup();
+        txtConvertido = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
+        lblConvertido = new javax.swing.JLabel();
         btnCalcular = new javax.swing.JButton();
+        lblOBS1 = new javax.swing.JLabel();
         btnLimpar = new javax.swing.JButton();
+        lblOBS2 = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         lblValor = new javax.swing.JLabel();
         rbReais = new javax.swing.JRadioButton();
         rbDolar = new javax.swing.JRadioButton();
-        txtConvertido = new javax.swing.JTextField();
-        lblConvertido = new javax.swing.JLabel();
-        lblOBS1 = new javax.swing.JLabel();
-        lblOBS2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Conversor de Moedas");
+
+        txtConvertido.setEditable(false);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lblTitulo.setText("Conversor de Moedas");
+
+        lblConvertido.setText("Valor convertido:");
 
         btnCalcular.setBackground(new java.awt.Color(51, 153, 0));
         btnCalcular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -58,6 +58,8 @@ public class Exercicio10 extends javax.swing.JFrame {
             }
         });
 
+        lblOBS1.setText("$");
+
         btnLimpar.setBackground(new java.awt.Color(102, 0, 0));
         btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,9 +70,12 @@ public class Exercicio10 extends javax.swing.JFrame {
             }
         });
 
+        lblOBS2.setText("R$");
+
+        jLabel1.setText("Converter para:");
+
         lblValor.setText("Insira um valor:");
 
-        bgMoedas.add(rbReais);
         rbReais.setSelected(true);
         rbReais.setText("Reais (R$)");
         rbReais.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +84,6 @@ public class Exercicio10 extends javax.swing.JFrame {
             }
         });
 
-        bgMoedas.add(rbDolar);
         rbDolar.setText("Dolar (USD)");
         rbDolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,34 +91,23 @@ public class Exercicio10 extends javax.swing.JFrame {
             }
         });
 
-        txtConvertido.setEditable(false);
-
-        lblConvertido.setText("Valor convertido:");
-
-        lblOBS1.setText("$");
-
-        lblOBS2.setText("R$");
-
-        jLabel1.setText("Converter para:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(126, 126, 126)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(lblTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
+                        .addGap(57, 57, 57)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbReais)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbDolar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
+                        .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblConvertido)
@@ -127,14 +120,14 @@ public class Exercicio10 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblOBS1)
-                            .addComponent(lblOBS2))))
-                .addContainerGap(155, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnCalcular)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLimpar)
-                .addGap(231, 231, 231))
+                            .addComponent(lblOBS2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(btnCalcular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLimpar)
+                        .addGap(76, 76, 76)))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,7 +161,7 @@ public class Exercicio10 extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here: BOTAO CALCULAR
-        
+
         //Variavel float para o valor monetario inserido em uma caixa de texto abaixo
         float carteira;
 
@@ -176,60 +169,60 @@ public class Exercicio10 extends javax.swing.JFrame {
         try{
             //Valor de carteira inserido em uma caixa de texto
             carteira = (float) Double.parseDouble(txtValor.getText());
-            
+
         }catch(NumberFormatException ERRO){
             JOptionPane.showMessageDialog(null, "Digite um valor monetario e seleciona o metodo de conversão!");
             return;
         }
-        
+
         //Cotação de dolar atualmente (1 dolar = 4.93 reais)
         float dolarAtual = 4.93f;
-        
+
         //Conversão R$ para USD
         float conversaoDolar = (carteira/dolarAtual);
-        
+
         //Conversão USD para R$
         float conversaoReais = (carteira*dolarAtual);
-        
+
         //Condições para a impressão dos valores convertidos
         if (rbDolar.isSelected()){
-            txtConvertido.setText(String.format("%.2f$",conversaoDolar));            
+            txtConvertido.setText(String.format("%.2f$",conversaoDolar));
         }else if (rbReais.isSelected()){
-            txtConvertido.setText(String.format("R$%.2f",conversaoReais));            
+            txtConvertido.setText(String.format("R$%.2f",conversaoReais));
         }
-        
+
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+
+        //Limpando caixas de texto e requisitando foco a uma em especifico
+        txtValor.setText(null);
+        txtConvertido.setText(null);
+        txtValor.requestFocus();
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     private void rbReaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbReaisActionPerformed
         // TODO add your handling code here: RADIO BUTTON REAIS
-        
-        /*Ao selecionarmos o rabio button, iremos trocar algumas labels para mostrarmos 
+
+        /*Ao selecionarmos o rabio button, iremos trocar algumas labels para mostrarmos
         ao usuario qual é a moeda atual de input e o que será convertido */
-        
+
         lblOBS1.setText("$");
         lblOBS2.setText("R$");
-        
+
     }//GEN-LAST:event_rbReaisActionPerformed
 
     private void rbDolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbDolarActionPerformed
         // TODO add your handling code here: RADION BUTTON DOLAR
-        
-        /*Ao selecionarmos o rabio button, iremos trocar algumas labels para mostrarmos 
+
+        /*Ao selecionarmos o rabio button, iremos trocar algumas labels para mostrarmos
         ao usuario qual é a moeda atual de input e o que será convertido */
-        
+
         lblOBS1.setText("R$");
         lblOBS2.setText("$");
-        
-    }//GEN-LAST:event_rbDolarActionPerformed
 
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        // TODO add your handling code here: BOTAO LIMPAR
-        
-        //Limpando caixas de texto e requisitando foco a uma em especifico
-        txtValor.setText(null);
-        txtConvertido.setText(null);        
-        txtValor.requestFocus();
-    }//GEN-LAST:event_btnLimparActionPerformed
+    }//GEN-LAST:event_rbDolarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,26 +241,25 @@ public class Exercicio10 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Exercicio10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio10_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Exercicio10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio10_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Exercicio10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio10_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Exercicio10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Exercicio10_INTERFACE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Exercicio10().setVisible(true);
+                new Exercicio10_INTERFACE().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup bgMoedas;
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpar;
     private javax.swing.JLabel jLabel1;
