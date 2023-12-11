@@ -4,6 +4,8 @@
  */
 package CodigoPOO;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -26,6 +28,7 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         txtConvertido = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
         lblConvertido = new javax.swing.JLabel();
@@ -76,6 +79,7 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
 
         lblValor.setText("Insira um valor:");
 
+        buttonGroup1.add(rbReais);
         rbReais.setSelected(true);
         rbReais.setText("Reais (R$)");
         rbReais.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +88,7 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(rbDolar);
         rbDolar.setText("Dolar (USD)");
         rbDolar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,33 +167,29 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here: BOTAO CALCULAR
 
-        //Variavel float para o valor monetario inserido em uma caixa de texto abaixo
-        float carteira;
-
+        //Criando novo objeto
+        Exercicio10_CLASSE carteira = new Exercicio10_CLASSE();
+        
         //Mecanica de erro
         try{
-            //Valor de carteira inserido em uma caixa de texto
-            carteira = (float) Double.parseDouble(txtValor.getText());
-
+            //Atribuindo a um atributo criado na classe o valor convertido de uma caixa de texto
+            carteira.setCarteira(Float.valueOf(txtValor.getText()));
+            
         }catch(NumberFormatException ERRO){
-            JOptionPane.showMessageDialog(null, "Digite um valor monetario e seleciona o metodo de conversão!");
-            return;
+            JOptionPane.showMessageDialog(null, "Digite um valor monetario e selecione o metodo de conversão abaixo!");            
         }
-
-        //Cotação de dolar atualmente (1 dolar = 4.93 reais)
-        float dolarAtual = 4.93f;
-
-        //Conversão R$ para USD
-        float conversaoDolar = (carteira/dolarAtual);
-
-        //Conversão USD para R$
-        float conversaoReais = (carteira*dolarAtual);
-
-        //Condições para a impressão dos valores convertidos
-        if (rbDolar.isSelected()){
-            txtConvertido.setText(String.format("%.2f$",conversaoDolar));
-        }else if (rbReais.isSelected()){
-            txtConvertido.setText(String.format("R$%.2f",conversaoReais));
+        
+        //Atribuindo ao atributo abaixo o valor do dolar atual
+        carteira.setCotacaoAtual(4.94f);
+        
+        //Chamando metodo criado na classe
+        carteira.converterMoeda();
+        
+        //Condições para imprimirmos as conversões de moeda
+        if(rbDolar.isSelected()){
+            txtConvertido.setText(String.format("%.2f$",carteira.getConversaoDolar()));
+        }else if(rbReais.isSelected()){
+            txtConvertido.setText(String.format("R$%.2f",carteira.getConversaoReais()));
         }
 
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -262,6 +263,7 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JButton btnLimpar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblConvertido;
     private javax.swing.JLabel lblOBS1;
