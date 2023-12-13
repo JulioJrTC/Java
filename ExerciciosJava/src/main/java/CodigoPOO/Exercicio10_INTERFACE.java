@@ -43,6 +43,7 @@ public class Exercicio10_INTERFACE extends javax.swing.JFrame {
         rbDolar = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Conversor de Moedas");
 
         txtConvertido.setEditable(false);
 
