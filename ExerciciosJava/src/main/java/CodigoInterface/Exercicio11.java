@@ -4,6 +4,8 @@
  */
 package CodigoInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -45,6 +47,7 @@ public class Exercicio11 extends javax.swing.JFrame {
         txtFieldTinta = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculador de Area e Tinta");
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         lblTitulo.setText("Calculador de Area e Tinta");
@@ -82,6 +85,11 @@ public class Exercicio11 extends javax.swing.JFrame {
         btnLimpar.setBackground(new java.awt.Color(102, 0, 0));
         btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         lblM1.setText("(m)");
 
@@ -177,7 +185,7 @@ public class Exercicio11 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcular)
                     .addComponent(btnLimpar))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -189,11 +197,29 @@ public class Exercicio11 extends javax.swing.JFrame {
         //Variaveis para altura, largura e quantidade de tinta
         double altura,largura,area,quantTinta;
         
-        //Atribuindo a variavel altura o valor (convertido para double) de uma caixa de texto 
-        altura = Double.parseDouble(txtAltura.getText());
+        //Frases de erros
+        String Erro1 = "Erro! Digite um valor (em metros) para a altura! (Usando ponto como separador)";
+        String Erro2="Erro! Digite um valor (em metros) para a largura! (Usando ponto como separador)";
         
-        //Atribuindo a variavel largura o valor (convertido para double) de uma caixa de texto 
-        largura = Double.parseDouble(txtLargura.getText());
+        //Mecanica de erro
+        try{
+            //Atribuindo a variavel altura o valor (convertido para double) de uma caixa de texto 
+            altura = Double.parseDouble(txtAltura.getText());
+            
+        }catch(NumberFormatException ERRO){
+            JOptionPane.showMessageDialog(null,Erro1);
+            return;
+        }
+        
+        //Mecanica de erro
+        try{
+            //Atribuindo a variavel largura o valor (convertido para double) de uma caixa de texto 
+            largura = Double.parseDouble(txtLargura.getText());        
+            
+        }catch(NumberFormatException ERRO){
+            JOptionPane.showMessageDialog(null,Erro2);
+            return;
+        }
         
         //Calculando a area e imprimindo o resultado
         area = (altura*largura);
@@ -203,8 +229,19 @@ public class Exercicio11 extends javax.swing.JFrame {
         quantTinta = (area/2);
         txtFieldTinta.setText(String.format("Para pintarmos uma area de %.2f(m²)%nSerá necessaria %.2f(l) de tinta.", area,quantTinta));
         
-        
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+        
+        //Limpando caixas de texto e requisitando foco
+        txtAltura.setText(null);
+        txtLargura.setText(null);
+        txtArea.setText(null);
+        txtFieldTinta.setText(null);        
+        txtAltura.requestFocus();
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
