@@ -3,13 +3,12 @@ package CodigoPuro;
 public class TreinamentoJava{
     public static void main(String[] args){
         
-        //Convertendo uma string em minusculo para maiusculo
-        String palavraMinu = "alexa farts";
-        System.out.println(palavraMinu.toUpperCase());        
+        String alunos[] = new String[2];
         
-        //Convertendo uma string em minusculo para maiusculo
-        String palavraMaiu = "ALEXA FUCKS!";
-        System.out.println(palavraMinu.toLowerCase());
+        alunos[0]="Alexa";
+        alunos[1]="Dakota";
+        
+        System.out.println(alunos[0]);
 
     }
 }

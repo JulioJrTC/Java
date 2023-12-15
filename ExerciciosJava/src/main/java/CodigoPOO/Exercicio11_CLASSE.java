@@ -47,5 +47,4 @@ public class Exercicio11_CLASSE {
         quantTinta = (area/2);        
     }
     
-    
 }
