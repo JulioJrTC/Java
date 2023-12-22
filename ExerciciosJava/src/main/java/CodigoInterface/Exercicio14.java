@@ -4,6 +4,8 @@
  */
 package CodigoInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -26,21 +28,203 @@ public class Exercicio14 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        lblTitulo = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        rbtnCelcius = new javax.swing.JRadioButton();
+        rbtnFahrenheit = new javax.swing.JRadioButton();
+        txtTemp = new javax.swing.JTextField();
+        lbltempInput = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
+        txtResultado = new javax.swing.JTextField();
+        lblTemp1 = new javax.swing.JLabel();
+        lblTemp2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Conversor de Temperatura");
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTitulo.setText("Exercicio 14: Conversor de Temperatura");
+
+        btnCalcular.setBackground(new java.awt.Color(0, 153, 102));
+        btnCalcular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setBackground(new java.awt.Color(102, 0, 0));
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbtnCelcius);
+        rbtnCelcius.setText("Celcius");
+        rbtnCelcius.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnCelciusActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbtnFahrenheit);
+        rbtnFahrenheit.setSelected(true);
+        rbtnFahrenheit.setText("Fahrenheit");
+        rbtnFahrenheit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnFahrenheitActionPerformed(evt);
+            }
+        });
+
+        lbltempInput.setText("Insira a temperatura:");
+
+        lblResultado.setText("Resultado:");
+
+        txtResultado.setEditable(false);
+
+        lblTemp1.setText("ºC");
+
+        lblTemp2.setText("ºF");
+
+        jLabel2.setText("Converter para:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGap(246, 246, 246)
+                            .addComponent(lbltempInput)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lblTemp1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(244, 244, 244)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(rbtnCelcius)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(rbtnFahrenheit))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblResultado)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(6, 6, 6))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnCalcular)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnLimpar)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblTemp2))))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(lblTitulo)
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbltempInput)
+                    .addComponent(lblTemp1))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnCelcius)
+                    .addComponent(rbtnFahrenheit)
+                    .addComponent(jLabel2))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResultado)
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTemp2))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalcular)
+                    .addComponent(btnLimpar))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here: BOTAO CALCULAR
+        
+        double temperatura;
+        
+        //Tratamento de erro
+        try{
+            //Temperatura C ou F de uma caixa de texto
+            temperatura = Double.parseDouble(txtTemp.getText());
+            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Erro! Por favor digite a temperatura (usando ponto como separador)");
+            return;            
+        }
+        
+        //Calculo matematico para a conversão de ºC para ºF
+        double converterF = (temperatura*9/5)+32;
+        
+        //Calculo matematico para a conversão de ºF para ºC
+        double converterC = (temperatura-32)*5/9;
+        
+        //Condições para a impressão do resultado da conversão
+        if (rbtnFahrenheit.isSelected()){
+            txtResultado.setText(String.format("%.1f", converterF));
+            
+        }
+        else if(rbtnCelcius.isSelected()){
+            txtResultado.setText(String.format("%.1f",converterC));
+        }
+        
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+        
+        //Limpando caixas de texto e requisitando foco
+        txtTemp.setText(null);
+        txtResultado.setText(null);
+        txtTemp.requestFocus();
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void rbtnFahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnFahrenheitActionPerformed
+        // TODO add your handling code here: RADIO BUTTON F
+        
+        //Ao selecionar o Radio Button da temperatura F, iremos mudar os valores das labels abaixo
+        lblTemp1.setText("ºC");
+        lblTemp2.setText("ºF");
+        
+    }//GEN-LAST:event_rbtnFahrenheitActionPerformed
+
+    private void rbtnCelciusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCelciusActionPerformed
+        // TODO add your handling code here: RADIO BUTTON C
+        
+        //Ao selecionar o Radio Button da temperatura C, iremos mudar os valores das labels abaixo
+        lblTemp1.setText("ºF");
+        lblTemp2.setText("ºC");
+        
+    }//GEN-LAST:event_rbtnCelciusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +262,18 @@ public class Exercicio14 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTemp1;
+    private javax.swing.JLabel lblTemp2;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lbltempInput;
+    private javax.swing.JRadioButton rbtnCelcius;
+    private javax.swing.JRadioButton rbtnFahrenheit;
+    private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextField txtTemp;
     // End of variables declaration//GEN-END:variables
 }
