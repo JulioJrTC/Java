@@ -4,6 +4,8 @@
  */
 package CodigoInterface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author julio
@@ -89,13 +91,18 @@ public class Exercicio15 extends javax.swing.JFrame {
             }
         });
 
+        txtKmAPagar.setEditable(false);
+
         lblKmAPagar.setText("Valor a pagar: R$");
 
         lblDiasAPagar.setText("Valor a pagar: R$");
 
+        txtDiasAPagar.setEditable(false);
         txtDiasAPagar.setText("60,00");
 
         lblTotalAPagar.setText("Total: R$");
+
+        txtTotalAPagar.setEditable(false);
 
         txtDiasAlugados.setText("1");
 
@@ -209,6 +216,7 @@ public class Exercicio15 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Variaveis de instancias de classe (iremos acessar essas variaveis em varios metodos)
     double diasAPagar;
     double kmAPagar;
     
@@ -230,7 +238,10 @@ public class Exercicio15 extends javax.swing.JFrame {
     private void btnCalcularTotalAPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularTotalAPagarActionPerformed
         // TODO add your handling code here: BOTAO CALCULAR
         
+        //Calculando o valor total ao somar os valores de KMs percorridos e dias alugados
         double valorTotal = (diasAPagar+kmAPagar);
+        
+        //Inserindo valor total em uma caixa de texto
         txtTotalAPagar.setText(String.format("%.2f", valorTotal));
         
     }//GEN-LAST:event_btnCalcularTotalAPagarActionPerformed
@@ -238,8 +249,19 @@ public class Exercicio15 extends javax.swing.JFrame {
     private void btnCalcularKmAPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularKmAPagarActionPerformed
         // TODO add your handling code here: BOTAO CALCULAR VALOR A PAGAR POR KM
         
-        //Inserindo a uma variavel integer a quantidade de KMs percorridos inseridos em uma caixa de texto
-       double kmPercorrido = Double.parseDouble(txtKm.getText());
+        double kmPercorrido;
+        
+        //Tratamento de erro
+        try{
+            //Inserindo a uma variavel integer a quantidade de KMs percorridos inseridos em uma caixa de texto
+            kmPercorrido = Double.parseDouble(txtKm.getText());
+            
+            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Erro! Por favor digite a quantidade de KMs percorridos!");
+            return;
+            
+        }
        
        //Calculando o valor a pagar de acordo com as informações acima
        kmAPagar = (kmPercorrido*0.15);
@@ -252,10 +274,10 @@ public class Exercicio15 extends javax.swing.JFrame {
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // TODO add your handling code here: BOTAO LIMPAR
         
-        txtKm.setText("0");
-        txtKmAPagar.setText("0");
-        txtTotalAPagar.setText("0");
-        
+        //Limpando as caixas de texto e inserindo valores padrão ao limpar
+        txtKm.setText(null);
+        txtKmAPagar.setText(null);
+        txtTotalAPagar.setText(null);
         
     }//GEN-LAST:event_btnLimparActionPerformed
 
