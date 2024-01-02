@@ -48,6 +48,7 @@ public class Exercicio15_INTERFACE extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Aluguel de Carro");
 
         lblDiasAPagar.setText("Valor a pagar: R$");
 
