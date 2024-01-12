@@ -1,21 +1,36 @@
 package CodigoPuro;
 
-public class TreinamentoJava {
-    //Variavel declarada fora dos metodos abaixo
-    String garota; // Escopo de classe
+import java.util.Scanner;
 
-    //Metodo principal
-    public static void main(String[] args) {
-        TreinamentoJava obj = new TreinamentoJava();
-        obj.garota = "Alexa";
-        obj.imprimirNome();
-        // Variável garota é acessível aqui        
+public class TreinamentoJava {
+    
+    public static void main(String[] args){
+        
+        Scanner lerNumero = new Scanner(System.in);
+    
+        String numeroString;
+        Double numeroDouble;
+        int numeroInt;
+
+        System.out.print("Digite um valor: ");
+        numeroString = lerNumero.nextLine();
+        
+        if(numeroString.contains(",")){
+            numeroString = numeroString.replace(",", ".");
+        }
+        
+        numeroDouble=Double.valueOf(numeroString);
+        numeroInt=(int)Math.floor(numeroDouble);
+        
+        
+        System.out.println(numeroString);
+        System.out.println(numeroDouble);
+        System.out.println(numeroInt);
+        
     }
     
-    //Metodo que irá imprimir uma variavel
-    public void imprimirNome(){
-        System.out.println(this.garota);
-        // Variável garota ainda é acessível aqui
-    }
+    
+    
+    
 
 }
