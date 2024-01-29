@@ -18,9 +18,6 @@ public class Exercicio19 {
         
         //Objeto Random
         Random escolhaRandom = new Random();
-        
-        
-
 
         //Lista String para 4 alunas
         String[] alunos = {"Alexa","Dakota","Candice","Tegan Nox"};
