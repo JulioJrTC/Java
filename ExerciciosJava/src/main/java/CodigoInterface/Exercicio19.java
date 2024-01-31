@@ -4,9 +4,7 @@
  */
 package CodigoInterface;
 
-import java.awt.ComponentOrientation;
 import java.util.Random;
-import javax.management.modelmbean.ModelMBean;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -16,17 +14,21 @@ import javax.swing.JOptionPane;
  */
 public class Exercicio19 extends javax.swing.JFrame {
 
-    private DefaultListModel<String> model; // Declaração do campo model
+    //Declarando uma variavel privada do tipo lista padrão
+    private DefaultListModel<String> modeloLista;
 
     /**
      * Creates new form Exercicio19
      */
     public Exercicio19() {
+        //Inicializando componentes
         initComponents();
-
-        //Inicializando o modelo de lista padrao e setando o modelo da mesma a lista
-        model = new DefaultListModel<>(); // Inicialização do campo model
-        listaAlunos.setModel(model);
+        
+        //Instanciando um objeto do tipo DefaultListModel e atribuindo o mesmo a uma variavel
+        modeloLista = new DefaultListModel<>(); 
+        
+        //Atribuindo a lista criada, o tipo de modelo criado anteriormente
+        listaAlunos.setModel(modeloLista);
     }
 
     /**
@@ -166,13 +168,14 @@ public class Exercicio19 extends javax.swing.JFrame {
         //Se a caixa de texto NÃO estiver vazia
         if (!aluno.isEmpty()) {
             //Adicionando valores da caixa de texto ao "modelo" da lista
-            model.addElement(aluno);
+            modeloLista.addElement(aluno);
 
             //Limpando caixa de texto ao inserir um valor a lista
             txtAluno.setText(null);
-
-            //Caso a caixa de texto esteja vazia, iremos exibir um erro    
-        } else {
+            
+        } 
+        //Caso a caixa de texto esteja vazia, iremos exibir um erro
+        else {
             JOptionPane.showMessageDialog(null, "Digite o nome de um aluno!");
         }
 
@@ -182,13 +185,13 @@ public class Exercicio19 extends javax.swing.JFrame {
         // TODO add your handling code here: BOTAO ESCOLHER ALUNO
 
         // Se a lista não estiver vazia
-        if (!model.isEmpty()) {
+        if (!modeloLista.isEmpty()) {
             // Obtém um número aleatório dentro do intervalo dos índices da lista
             Random numeroAleatorio = new Random();
-            int index = numeroAleatorio.nextInt(model.size());
+            int index = numeroAleatorio.nextInt(modeloLista.size());
 
             // Obtém o aluno aleatório da lista e exibe-o na caixa de texto
-            String alunoAleatorio = model.getElementAt(index);
+            String alunoAleatorio = modeloLista.getElementAt(index);
             txtAlunoEscolhido.setText(alunoAleatorio);
 
         //Caso a lista estiver vazia, iremos exibir um erro
@@ -202,27 +205,23 @@ public class Exercicio19 extends javax.swing.JFrame {
         // TODO add your handling code here: BOTAO LIMPAR LISTA
 
         //Limpando lista inteira
-        model.clear();
+        modeloLista.clear();
 
     }//GEN-LAST:event_btnLimparListaActionPerformed
 
     private void btnExcluirItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirItemActionPerformed
         // TODO add your handling code here: BOTAO EXCLUIR ITEM
 
-        //Armazenando o index de um valor selecionado na lista em uma variavel
+        //Armazenando o valor de index de um item selecionado na lista em uma variavel
         int indexSelecionado = listaAlunos.getSelectedIndex();
 
-        //Se SELECIONARMOS um valor na lista, iremos excluir esse valor
+        //Se o item selecionado na lista não estiver em index negativo (ou seja, se selecionarmos algo)
         if (indexSelecionado != -1) {
-
-            //Criando um novo objeto para o model da lista
-            DefaultListModel<String> model = (DefaultListModel<String>) listaAlunos.getModel();
-
             //Iremos remover um elemento da lista ao selecionarmos um valor na mesma
-            model.removeElementAt(indexSelecionado);
-
+            modeloLista.removeElementAt(indexSelecionado);
+        } 
         //Caso contrario, iremos exibir uma mensagem de erro
-        } else {
+        else {
             JOptionPane.showMessageDialog(this, "Selecione um item para excluir.", "Nenhum item selecionado", JOptionPane.WARNING_MESSAGE);
         }
 
