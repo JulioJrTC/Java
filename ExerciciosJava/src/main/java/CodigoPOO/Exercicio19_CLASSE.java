@@ -1,7 +1,5 @@
 package CodigoPOO;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Exercicio19_CLASSE {
@@ -66,19 +64,12 @@ public class Exercicio19_CLASSE {
     }    
     
     //Metodo que irá escolher um aluno aleatorio de uma lista
-    public void escolherAluno(){
-        
-        //Criando uma nova lista de Strings
-        List<String> listaAlunos = new ArrayList<>();
-        
-        //Adicionado elementos a lista criada
-        listaAlunos.add(a1);
-        listaAlunos.add(a2);
-        listaAlunos.add(a3);
-        listaAlunos.add(a4);
+    public void escolherAluno(){        
+        //Criando uma lista que irá conter valorer getters de caixas de texto
+        String[] listaAlunos = {getA1(),getA2(),getA3(),getA4()};
         
         //Armazendo a quantidade numerica de elementos na lista
-        int listaIndex = listaAlunos.size();
+        int listaIndex = listaAlunos.length;
         
         //Criando um novo objeto random
         Random random = new Random();
@@ -87,7 +78,7 @@ public class Exercicio19_CLASSE {
         int indexAleatorio = random.nextInt(listaIndex);
         
         //Retornando o nome do aluno baseado no valor aleatorio escolhido acima
-        setAlunoEscolhido(listaAlunos.get(indexAleatorio));
+        setAlunoEscolhido(listaAlunos[indexAleatorio]);
     }
     
 }
