@@ -12,4 +12,12 @@
         <exec.mainClass>com.mycompany.exerciciosjava.ExerciciosJava</exec.mainClass>
     </properties>
     <description>GITHUB</description>
+    <dependencies>
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

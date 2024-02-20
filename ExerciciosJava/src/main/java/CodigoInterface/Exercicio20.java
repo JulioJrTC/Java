@@ -1,10 +1,8 @@
 package CodigoInterface;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Random;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -48,6 +46,7 @@ public class Exercicio20 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sorteador de Alunos");
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitulo.setText("Exercicio 20: Sorteador de Alunos");
@@ -66,6 +65,11 @@ public class Exercicio20 extends javax.swing.JFrame {
         btnLimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
 
         txtAluno01.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtAluno01.setText("Dakota");
@@ -233,6 +237,24 @@ public class Exercicio20 extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnSortearActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here: BOTAO LIMPAR
+        
+        //Limpando caixas de texto e requisitando foco
+        txtAluno01.setText(null);
+        txtAluno02.setText(null);
+        txtAluno03.setText(null);
+        txtAluno04.setText(null);
+        
+        txtAlunoSorteado01.setText(null);
+        txtAlunoSorteado02.setText(null);
+        txtAlunoSorteado03.setText(null);
+        txtAlunoSorteado04.setText(null);
+        
+        txtAluno01.requestFocus();
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
